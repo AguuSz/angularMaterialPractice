@@ -1,0 +1,25 @@
+mat-form-field {
+  width: 100%;
+}
+
+// CSS necesario para los radio-button, donde vamos a hacer que se alineen en vertical
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    width: 30%;
+  }
+}

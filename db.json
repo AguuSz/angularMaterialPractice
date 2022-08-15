@@ -1,0 +1,32 @@
+{
+  "productList": [
+    {
+      "productName": "Apple",
+      "category": "Fruits",
+      "freshness": "Brand new",
+      "price": 5,
+      "comment": "This is an apple",
+      "date": "2022-08-02T03:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Banana",
+      "category": "Fruits",
+      "freshness": "Brand new",
+      "price": 10,
+      "comment": "Yellow banana",
+      "date": "2022-08-03T03:00:00.000Z",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
