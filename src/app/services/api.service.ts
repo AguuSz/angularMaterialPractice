@@ -18,4 +18,12 @@ export class ApiService {
   public getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.url}/productList/`);
   }
+
+  public editProduct(data: Product, id: number): Observable<Product> {
+    return this.http.put<Product>(`${this.url}/productList/` + id, data);
+  }
+
+  public deleteProduct(id: number): Observable<Product> {
+    return this.http.delete<Product>(`${this.url}/productList/` + id);
+  }
 }

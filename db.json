@@ -4,7 +4,7 @@
       "productName": "Apple",
       "category": "Fruits",
       "freshness": "Brand new",
-      "price": 5,
+      "price": 25,
       "comment": "This is an apple",
       "date": "2022-08-02T03:00:00.000Z",
       "id": 1
@@ -17,6 +17,24 @@
       "comment": "Yellow banana",
       "date": "2022-08-03T03:00:00.000Z",
       "id": 2
+    },
+    {
+      "productName": "iPhone 13",
+      "category": "Electronics",
+      "freshness": "Brand new",
+      "price": 1200,
+      "comment": "Latest phone from Apple",
+      "date": "2022-08-04T03:00:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "Oneplus 8T",
+      "category": "Electronics",
+      "freshness": "Brand new",
+      "price": 899,
+      "comment": "Best phone ever!",
+      "date": "2022-08-04T03:00:00.000Z",
+      "id": 5
     }
   ],
   "comments": [

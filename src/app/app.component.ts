@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
     'price',
     'freshness',
     'comment',
+    'actions',
   ];
   dataSource!: MatTableDataSource<Product>;
 
@@ -34,12 +35,21 @@ export class AppComponent implements OnInit {
   }
 
   public openDialog(): void {
-    this.dialog.open(DialogComponent, {
-      width: '30%',
-    });
+    this.dialog
+      .open(DialogComponent, {
+        width: '30%',
+      })
+      .afterClosed()
+      .subscribe({
+        next: (value) => {
+          if (value === 'save') {
+            this.getAllProducts();
+          }
+        },
+      });
   }
 
-  public getAllProducts() {
+  public getAllProducts(): void {
     this.service.getProducts().subscribe({
       next: (response: Product[]) => {
         this.dataSource = new MatTableDataSource(response);
@@ -52,7 +62,35 @@ export class AppComponent implements OnInit {
     });
   }
 
-  public applyFilter(event: Event) {
+  public editProduct(product: Product): void {
+    this.dialog
+      .open(DialogComponent, {
+        width: '30%',
+        data: product,
+      })
+      .afterClosed()
+      .subscribe({
+        next: (value) => {
+          if (value === 'update') {
+            this.getAllProducts();
+          }
+        },
+      });
+  }
+
+  public deleteProduct(product: Product): void {
+    this.service.deleteProduct(product.id).subscribe({
+      next: (res) => {
+        alert('Product has been deleted sucessfully');
+        this.getAllProducts();
+      },
+      error: (err) => {
+        alert('There is been an error, please retry');
+      },
+    });
+  }
+
+  public applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
